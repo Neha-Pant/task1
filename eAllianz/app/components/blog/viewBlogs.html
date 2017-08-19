@@ -1,0 +1,33 @@
+<div class="row">
+
+    <div class="col-md-12">
+
+        <center>
+            <h1 style="text-decoration:underline">BLOGS</h1>
+        </center>
+        <br/>
+        <table border="1" class="table table-bordered table-hover table-striped">
+            <tr>
+                <th>Blog Id</th>
+                <th>Blog Writer</th>
+                <th>Blog Title</th>
+                <th>Blog Category</th>
+                <th>Blog Date</th>
+                <th>Blog Likes</th>
+                <!--<th>Blog Content</th>-->
+            </tr>
+            <tr ng-repeat="x in blogCtrl.blogsA">
+                <td>{{x.blogId}}</td>
+                <td>{{x.blogUser}}</td>
+                <td><button ng-click="blogCtrl.singleBlog(x.blogId)" style=" background:none!important;border:none;padding:0!important;font: inherit;color:blue;border-bottom:1px solid blue;cursor: pointer;">{{x.blogHeader}}</button></td>
+                <td>{{x.blogCategory}}</td>
+                <td>{{x.blogDate}}</td>
+                <td>{{x.blogLikes}}</td>
+                <!--<td>{{x.blogContent}}</td>-->
+            </tr>
+        </table>
+
+        
+    </div>
+
+</div>

@@ -1,0 +1,149 @@
+<style>
+    body {
+        background: url('./assets/images/socialise2.jpg') fixed;
+        background-size: cover;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .wrap {
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99;
+    }
+    
+    p.form-title {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+        color: #FFFFFF;
+        margin-top: 5%;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        background-color: rgba(0, 0, 0, 0.66);
+        padding: 10px;
+        left: 45%;
+    }
+    
+    form {
+        width: 250px;
+        margin: 0 auto;
+    }
+    
+    form.login input[type="text"],
+    form.login input[type="password"] {
+        width: 100%;
+        margin: 0;
+        padding: 5px 10px;
+        background: 0;
+        border: 0;
+        border-bottom: 1px solid silver;
+        outline: 0;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+        color: darkgrey;
+        outline: 0;
+    }
+    
+    form.login input[type="button"] {
+        width: 100%;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-top: 16px;
+        outline: 0;
+        cursor: pointer;
+        letter-spacing: 1px;
+    }
+    
+    form.login input[type="submit"]:hover {
+        transition: background-color 0.5s ease;
+    }
+    
+    form.login label
+    {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-family: Arial Impact, 'Arial Narrow Bold';
+        color: black;
+    }
+    
+    form.login a {
+        transition: color 0.5s ease;
+    }
+    
+    form.login a:hover {
+        color: #2ecc71;
+    }
+</style>
+
+<div classs="container">
+    <div class="row">
+   <div class="wrap">
+            <center>
+                <p class="form-title" style="height:30pt;width:300pt">Register</p><br/>
+            </center>
+
+        <form name="userForm" class="login well"  ng-submit="submitForm(userForm.$valid)" novalidate style="height:500pt;width:300pt">
+
+            <div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+
+            <div class="form-group">
+                <label for="username">USER NAME</label>
+                <input type="text" name="username" ng-model="regCtrl.user.userName" ng-change="CheckUserName();" />
+                <label ng-if="userNameError" class="text text-danger">Invalid User Name</label>
+            </div>
+
+            <div class="form-group">
+                <label for="fullname">FULL NAME</label>
+                <input type="text" name="fullname" ng-model="regCtrl.user.fullName" />
+            </div>
+
+            <div class="form-group">
+                <label for="password">PASSWORD</label>
+                <input type="text" name="password" ng-model="regCtrl.user.password" />
+            </div>
+
+            <div class="form-group">
+                <label for="conpassword">CONFIRM PASSWORD</label>
+                <input type="text" name="conpassword" ng-model="regCtrl.user.conPassword" />
+            </div>
+
+            <div class="form-group">
+                <label for="email">EMAIL</label>
+                <input type="text" name="email" ng-model="regCtrl.user.email">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">MOBILE</label>
+                <input type="text" name="phone" ng-model="regCtrl.user.phone">
+            </div>
+
+            <div class="form-group">
+                <label for="role">ROLE</label>
+                <input type="text" name="role" ng-model="regCtrl.user.role">
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label for="file">User Image</label>
+                    <input type="text" ng-model="regCtrl.user.userImage">
+                </div>
+            </div>
+
+                    <div class="form-group">
+                        <input type="button" ng-click="regCtrl.register()" class="btn btn-primary btn-md" value="Register" />
+                    </div>
+        </form>
+        </div>
+    </div>
+    </div>
