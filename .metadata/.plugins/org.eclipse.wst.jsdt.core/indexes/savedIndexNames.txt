@@ -1,0 +1,6 @@
+INDEX VERSION 1.3+C:\Users\admin\Desktop\Project_Workspace_Collab\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+280776492.index
+2279763908.index
+1193030054.index
+1194133396.index
+3428050069.index

@@ -1,0 +1,6 @@
+package org.socialnetworking.daoImpl;
+
+public class BlogDAOImpl implements IBlogDAO 
+{
+
+}

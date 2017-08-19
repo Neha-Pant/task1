@@ -1,0 +1,70 @@
+package org.socialnetworking.test;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.socialnetworking.dao.IUserDAO;
+import static org.junit.Assert.*;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.socialnetworking.model.User;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class UserTestCase {
+	private static AnnotationConfigApplicationContext context;
+	private static IUserDAO userDAO;
+	private User user;
+	
+	@BeforeClass
+	public static void init() {
+		context = new AnnotationConfigApplicationContext();
+		context.scan("org.socialnetworking");
+		context.refresh();
+		userDAO=(IUserDAO)context.getBean("userDAO");
+	}
+	
+//	@Test
+//	public void testAddUser()
+//	{
+//		user=new User();
+//		user.setUserId(1);
+//		user.setUserName("ed");
+//		user.setFullName("Edward");
+//		user.setEmail("edward@cullen.com");
+//		user.setPhone("8826488032");
+//		user.setRole("user");
+//		user.setPassword("ed");
+//		user.setConPassword("ed");
+//		
+//		assertEquals("Successfully added a user inside the table .",true,userDAO.addUser(user));
+//	}
+//	
+//	@Test
+//	public void testGetUser()
+//	{
+//		user=userDAO.getUser(1);
+//		assertEquals("Retrieving data based on id from table","Edward",user.getFullName());
+//	}
+//	
+//	@Test
+//	public void testUpdateUser()
+//	{
+//		user=userDAO.getUser(1);
+//		user.setUserId(1);
+//		user.setUserName("ed");
+//		user.setFullName("Edward");
+//		user.setEmail("edward@cullen.com");
+//		user.setPhone("8826488032");
+//		user.setRole("user");
+//		user.setPassword("pass");
+//		user.setConPassword("pass");
+//		
+//		assertEquals("Updating user based on id from table",true,userDAO.updateUser(user));
+//	}
+//	
+//	@Test
+//	public void testDeleteUser()
+//	{
+//		assertEquals("Deleting user based on id from table",true,userDAO.deleteUser(1));
+//	}
+
+}

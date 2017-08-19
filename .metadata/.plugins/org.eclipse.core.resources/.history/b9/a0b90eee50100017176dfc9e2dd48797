@@ -1,0 +1,17 @@
+package org.socialnetworking.model;
+
+import java.io.Serializable;
+
+public class BlogComment extends DomainResponse implements Serializable {
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8690414624158326101L;
+
+	
+}

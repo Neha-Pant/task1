@@ -1,0 +1,77 @@
+package org.socialnetworking.daoImpl;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.socialnetworking.dao.IBlogDAO;
+import org.socialnetworking.model.Blog;
+import org.socialnetworking.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Transactional;
+
+@Repository("blogDAO")
+@Transactional
+@EnableTransactionManagement
+public class BlogDAOImpl implements IBlogDAO 
+{
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	@Override
+	public Blog getBlog(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Blog> getAllBlogs() {
+		return sessionFactory.getCurrentSession().createQuery("FROM Blog", Blog.class).getResultList();
+	}
+
+	@Override
+	public List<Blog> getDBlogs() {
+		return sessionFactory.getCurrentSession().createQuery("FROM Blog b where b.isActive='false'", Blog.class).getResultList();
+	}
+
+	@Override
+	public List<Blog> getABlogs() {
+		return sessionFactory.getCurrentSession().createQuery("FROM Blog b where b.isActive='true'", Blog.class).getResultList();
+	}
+
+	@Override
+	public List<Blog> getBlogsByUserName(String userName) {
+		return sessionFactory.getCurrentSession().createQuery("FROM Blog b where b.blogUser=:userName", Blog.class).getResultList();
+	}
+
+	@Override
+	public Blog getBlogByHeader(String blogTitle) {
+		return sessionFactory.getCurrentSession().createQuery("FROM Blog b where b.blogHeader=:blogTitle", Blog.class).getSingleRecord();
+	}
+
+	@Override
+	public boolean activateBlog(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean addBlog(Blog b) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateBlog(Blog b) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteBlog(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

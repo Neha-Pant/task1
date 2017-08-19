@@ -1,0 +1,29 @@
+package org.socialnetworking.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Blogs")
+public class Blog extends DomainResponse implements Serializable{
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5902335015810630363L;
+	
+	private int blogId;
+	private String blogHeader;
+	private String blogCategory;
+	private String blogUser;
+	private String blogContent;
+	private String isActive="false";
+	private int blogLikes;
+	
+}

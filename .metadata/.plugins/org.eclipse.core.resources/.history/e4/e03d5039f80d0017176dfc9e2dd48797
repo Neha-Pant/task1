@@ -1,0 +1,5 @@
+package org.socialnetworking.dao;
+
+public interface IBlogDAO {
+
+}

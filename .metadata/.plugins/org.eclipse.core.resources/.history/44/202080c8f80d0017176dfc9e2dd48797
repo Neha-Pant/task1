@@ -1,0 +1,81 @@
+package org.socialnetworking.daoImpl;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.socialnetworking.dao.IBlogDAO;
+import org.socialnetworking.model.Blog;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Transactional;
+
+@Repository("blogDAO")
+@Transactional
+@EnableTransactionManagement
+public class BlogDAOImpl implements IBlogDAO 
+{
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	@Override
+	public Blog getBlog(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Blog> getAllBlogs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Blog> getDBlogs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Blog> getABlogs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Blog> getBlogsByUserName(String userName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Blog getBlogByHeader(String blogTitle) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean activateBlog(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean addBlog(Blog b) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateBlog(Blog b) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteBlog(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

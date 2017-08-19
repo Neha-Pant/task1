@@ -1,0 +1,5 @@
+package org.socialnetworking.model;
+
+public class Blog {
+
+}
